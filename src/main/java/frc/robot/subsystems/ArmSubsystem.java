@@ -4,6 +4,7 @@
 
 package frc.robot.subsystems;
 
+import frc.robot.Constants.PortConstants;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
@@ -15,9 +16,9 @@ public class ArmSubsystem extends SubsystemBase {
   private final CANSparkMax armMotorController1;
   private final CANSparkMax armMotorController2;
 
-	public ArmSubsystem() {
-    this.armMotorController1 = new CANSparkMax(1, MotorType.kBrushless);
-    this.armMotorController2 = new CANSparkMax(2, MotorType.kBrushless);
+  public ArmSubsystem() {
+    this.armMotorController1 = new CANSparkMax(PortConstants.ARM_CONTROLLER_1_PORT, MotorType.kBrushless);
+    this.armMotorController2 = new CANSparkMax(PortConstants.ARM_CONTROLLER_2_PORT, MotorType.kBrushless);
   }
 
   public void setArmController1Speed(double speed) {

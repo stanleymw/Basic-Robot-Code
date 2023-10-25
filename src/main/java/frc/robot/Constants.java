@@ -17,4 +17,8 @@ public final class Constants {
 	public static class OperatorConstants {
 		public static final int DRIVER_CONTROLLER_PORT = 0;
 	}
+	public static class PortConstants {
+		public static final int ARM_CONTROLLER_1_PORT = 1;
+		public static final int ARM_CONTROLLER_2_PORT = 2;
+	}
 }
