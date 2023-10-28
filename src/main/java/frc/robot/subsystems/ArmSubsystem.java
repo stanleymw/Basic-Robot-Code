@@ -34,6 +34,10 @@ public class ArmSubsystem extends SubsystemBase {
     setArmController2Speed(speed2);
   }
 
+  public void stopAllMotorSpeed() {
+    setBothArmControllerSpeed(0.0, 0.0);
+  }
+
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
