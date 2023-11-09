@@ -43,13 +43,13 @@ public class RobotContainer {
 	 * {@link CommandXboxControllerXbox}/{@link edu.wpi.first.wpilibj2.command.button.CommandPS4ControllerPS4} controllers or
 	 * {@link edu.wpi.first.wpilibj2.command.button.CommandJoystick Flightjoysticks}.
 	 */
-	private void configureBindings() {
-		Command resetCommand = Commands.runOnce(() -> {
-			m_armSubsystem.stopAllMotorSpeed();
-		}, ArmSubsystem).andThen(new TestArmCommand());
+  private void configureBindings() {
+    Command resetCommand = Commands.runOnce(() -> {
+      m_armSubsystem.stopAllMotorSpeed();
+    }, m_armSubsystem).andThen(new TestArmCommand(m_armSubsystem));
 
     resetCommand.schedule();
-	}
+  }
 
 	/**
 	 * Use this to pass the autonomous command to the main {@link Robot} class.
