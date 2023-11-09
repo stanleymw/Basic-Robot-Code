@@ -23,7 +23,7 @@ public class RobotContainer {
 	// The robot's subsystems and commands are defined here...
 	private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
 
-	private final ArmSubsystem m_armSubsystem = new ArmSubsystem();
+	private final ArmSubsystem armSubsystem = new ArmSubsystem();
 
 	// Replace with CommandPS4Controller or CommandJoystick if needed
 	private final CommandXboxController m_driverController = new CommandXboxController(OperatorConstants.DRIVER_CONTROLLER_PORT);
@@ -45,8 +45,8 @@ public class RobotContainer {
 	 */
   private void configureBindings() {
     Command resetCommand = Commands.runOnce(() -> {
-      m_armSubsystem.stopAllMotorSpeed();
-    }, m_armSubsystem).andThen(new TestArmCommand(m_armSubsystem));
+      armSubsystem.stopAllMotorSpeed();
+    }, armSubsystem).andThen(new TestArmCommand(armSubsystem));
 
     resetCommand.schedule();
   }
